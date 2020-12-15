@@ -1,6 +1,71 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+/* ---- ----- ----- Stylo ----- ----- ----- */
+:root {
+	--rojo: #E50914;
+	--fondo: #141414;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--fondo);
+	font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	margin: auto;
+}
+
+header {
+	padding: 30px 0;
+}
+
+header .contenedor {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header .logotipo {
+	font-family: 'Bebas Neue', cursive;
+	font-weight: normal;
+	color: var(--rojo);
+	font-size: 40px;
+}
+
+header nav a {
+	color: #AAA;
+	text-decoration: none;
+	margin-right: 20px;
+}
+
+header nav a:hover,
+header nav a.activo {
+	color: #FFF;
+}
+
+/* ---- ----- ----- Media Queries ----- ----- ----- */
+@media screen and (max-width: 800px) {
+	header .logotipo {
+		margin-bottom: 10px;
+		font-size: 30px;
+	}
+
+	header .contenedor {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -68,4 +133,148 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+.footer .footer-text{
+  position:absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background:rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 2px solid #fff;
+}
+.footer .footer-text p{
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+/* Registro
+-------------------------------------------------- */
+.contacto{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(../img/img-1.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.contacto .deg-contacto{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.contacto .ejeZcontacto{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.contacto .contacto-content{
+  padding-top: 100px;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 100px;
+}
+.contacto .contacto-content .contacto-title{
+  width: 50%;
+  margin: auto;
+  border:2px solid #fff;
+  padding:15px;
+}
+.contacto .contacto-content .contacto-title h2{
+  font-size: 35px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.contacto .contacto-content .contacto-title hr{
+  background: #fff;
+  height: 2px;
+  width: 80%;
+  margin:auto;
+}
+.contacto .formulario-content{
+  width: 60%;
+  margin: 50px auto;
+  background: #fff;
+  padding:30px;
+  border-radius: 50px;
+  border: 1.5px solid var(--red);
+}
+.contacto .formulario-content #formulario{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Productos
+-------------------------------------------------- */
+.contacto1{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url(../img/img-14.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.contacto1 .deg-contacto1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+.contacto1 .ejeZcontacto1{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.contacto1 .contacto1-content{
+  padding-top: 100px;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 100px;
+}
+.contacto1 .contacto1-content .contacto1-title{
+  width: 50%;
+  margin: auto;
+  border:2px solid #fff;
+  padding:15px;
+}
+.contacto1 .contacto1-content .contacto1-title h2{
+  font-size: 35px;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.contacto1 .contacto1-content .contacto1-title hr{
+  background: #fff;
+  height: 2px;
+  width: 80%;
+  margin:auto;
+}
+.contacto1 .formulario-content{
+  width: 60%;
+  margin: 50px auto;
+  background: #fff;
+  padding:30px;
+  border-radius: 50px;
+  border: 1.5px solid var(--red);
+}
+.contacto1 .formulario-content #formulario{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

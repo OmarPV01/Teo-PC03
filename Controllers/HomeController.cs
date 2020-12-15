@@ -20,7 +20,8 @@ namespace Teo_PC03.Controllers
 
         public IActionResult Index()
         {
-            var Formulario = _context.Formularios.Where(x => x.FecNac != null).Take(3).ToList();
+            DateTime fecha = DateTime.Today.AddDays(-7);
+            var Formulario = _context.Formularios.Where(x => x.FecRes > fecha).ToList();
             return View(Formulario);
         }
 

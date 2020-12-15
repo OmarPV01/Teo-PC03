@@ -1,37 +1,57 @@
 @model Formulario
 
-<h1>Formulario Producto</h1>
+@{
+    ViewData["Title"] = "Solicitud de Registro";
+}
 
-<div asp-validation-summary="All"></div>
-
-<form action="" method="post">
-    <div class="form-group">
-        <label asp-for="Nombre"></label>
-        <input type="text" asp-for="Nombre" class="form-control">
+<div class="contacto">
+<div class="container-fluid">
+<div class="row"> 
+  <div class="ejeZcontacto">
+  <div class="contacto-content">
+        <div class="contacto-title"><h2>Registrar Producto</h2><hr></div>
+        <div class="formulario-content">
+        <div asp-validation-summary="All"></div>
+        <form action="" method="post">
+            <div class="form-group">
+                <label asp-for="Nombre">Nombre del producto:</label>
+                <input type="text" asp-for="Nombre" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Url">Imagen del producto:</label><br>
+                <input type="file" asp-for="Url"/>
+                <span asp-validation-for="Url" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion">Descripción de la publicación:</label>
+                <textarea asp-for="Descripcion" class="form-control"></textarea>
+            </div> 
+            <div class="form-group">
+                <label asp-for="Precio">Precio del Producto:</label>
+                <input type="text" asp-for="Precio" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Celular">Celular del Contacto:</label>
+                <input type="text" asp-for="Celular" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Lugar">Lugar de Compra:</label>
+                <input type="text" asp-for="Lugar" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="NomUsu">Nombre del Usuario:</label>
+                <input type="text" asp-for="NomUsu" class="form-control">
+            </div>        
+            <div class="form-group">
+                <label>Fecha de Registro:</label>
+                <input type="date" class="form-control" asp-for="FecRes">
+            </div>
+            <br/>
+            <center><button class="btn btn-primary">Enviar</button></center>
+        </form>
+        </div>
     </div>
-    <div class="form-group">
-        <label asp-for="Url"></label>
-        <input type="text" asp-for="Url" class="form-control">
     </div>
-    <div class="form-group">
-        <label asp-for="Descripcion"></label>
-        <textarea asp-for="Descripcion" class="form-control"></textarea>
-    </div> 
-    <div class="form-group">
-        <label asp-for="Precio"></label>
-        <input type="text" asp-for="Precio" class="form-control">
-    </div>
-    <div class="form-group">
-        <label asp-for="Celular"></label>
-        <input type="text" asp-for="Celular" class="form-control">
-    </div>
-    <div class="form-group">
-        <label asp-for="Lugar"></label>
-        <input type="text" asp-for="Lugar" class="form-control">
-    </div>
-    <div class="form-group">
-        <label asp-for="NomUsu">Nombre Usuario</label>
-        <input type="text" asp-for="NomUsu" class="form-control">
-    </div>        
-    <button class="btn btn-primary">Enviar</button>
-</form>
+</div>
+</div>
+</div>

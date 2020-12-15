@@ -1,42 +1,53 @@
 ﻿@model List<Formulario>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Productos Registrados";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Productos registrados</h1>
-
-
-    <table class="table">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Url</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-            <th>Celular</th>
-            <th>Lugar</th>
-            <th>Nombre Usuario</th>
-            <th>Operaciones</th>
-        </tr>
-        @if (Model.Count == 0) {
-            <tr>
-                <td colspan="9" class="text-center">No se encontraron registros.</td>
-            </tr>
-        }
-        @foreach (var formulario in Model) 
-        {
-            <tr>
-                <td>@formulario.Id</td>
-                <td>@formulario.Nombre</td>
-                <td>@formulario.Url</td>
-                <td>@formulario.Descripcion</td>
-                <td>@formulario.Precio</td>
-                <td>@formulario.Celular</td>
-                <td>@formulario.Lugar</td>
-                <td>@formulario.NomUsu</td>
-            </tr>
-        }
-    </table>
+<div class="contacto1">
+<div class="container-fluid">
+<div class="row"> 
+  <div class="ejeZcontacto1">
+  <div class="contacto1-content">
+    <div class="contacto1-title"><h2>Productos Registrados</h2><hr></div>
+    <br/>
+    @if(@Model.Count>0){
+        <div class="row">
+            @foreach (var formulario in Model)
+            {
+                <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                <div class="card-body" style="text-align: center;">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><h4>Nombre: </h4>@formulario.Nombre</li>
+                        <li class="list-group-item"><h4>Descripción: </h4>@formulario.Descripcion</li>
+                        <li class="list-group-item"><h4>URL Foto: </h4>@formulario.Url</li>
+                        <li class="list-group-item"><h4>Precio: </h4>@formulario.Precio</li>
+                        <li class="list-group-item"><h4>Celular: </h4>@formulario.Celular</li>
+                        <li class="list-group-item"><h4>Lugar: </h4>@formulario.Lugar</li>
+                        <li class="list-group-item"><h4>Usuario: </h4>@formulario.NomUsu</li>
+                    </ul>
+                </div>
+                </div>
+                </div>
+            }
+        </div>
+    }else{
+        <center>
+            <div style="row">
+                <table>
+                    <tr>
+                        <td>
+                        <h2 style="align-content: center; color: white;">No encontramos ningun producto registrado</h2>
+                        <h4 style="color: white;">Registra un producto ahora mismo</h4><a asp-controller="Home" asp-action="Formulario" style="align: Center;"><button class="btn btn-danger">Click Aquí</button></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </center>
+    }
+    </div>
+    </div>
+</div>
+</div>
 </div>
