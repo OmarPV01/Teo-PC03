@@ -1,8 +1,42 @@
-﻿@{
+﻿@model List<Formulario>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Productos registrados</h1>
+
+
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Url</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Celular</th>
+            <th>Lugar</th>
+            <th>Nombre Usuario</th>
+            <th>Operaciones</th>
+        </tr>
+        @if (Model.Count == 0) {
+            <tr>
+                <td colspan="9" class="text-center">No se encontraron registros.</td>
+            </tr>
+        }
+        @foreach (var formulario in Model) 
+        {
+            <tr>
+                <td>@formulario.Id</td>
+                <td>@formulario.Nombre</td>
+                <td>@formulario.Url</td>
+                <td>@formulario.Descripcion</td>
+                <td>@formulario.Precio</td>
+                <td>@formulario.Celular</td>
+                <td>@formulario.Lugar</td>
+                <td>@formulario.NomUsu</td>
+            </tr>
+        }
+    </table>
 </div>

@@ -5,4 +5,9 @@
     <RootNamespace>Teo_PC03</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="microsoft.entityframeworkcore" Version="5.0.1" />
+    <PackageReference Include="microsoft.entityframeworkcore.inmemory" Version="5.0.1" />
+  </ItemGroup>
+
 </Project>
